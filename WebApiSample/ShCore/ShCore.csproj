@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B905F356-7F46-4A72-9E51-F6714CA8B415}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ShCore</RootNamespace>
+    <AssemblyName>ShCore</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Practices.EnterpriseLibrary.Common.dll.3.1.0\lib\2.0\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Practices.EnterpriseLibrary.Data.dll.3.1.0\lib\2.0\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51206.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Practices.ObjectBuilder.dll.3.1.0\lib\2.0\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=59d6d24383174ac4, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocation.1.0.0\lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\ClassInfoAttribute.cs" />
+    <Compile Include="Attributes\FieldInfoAttribute.cs" />
+    <Compile Include="Attributes\MethodBoundaryAttribute.cs" />
+    <Compile Include="Attributes\MethodInfoAttribute.cs" />
+    <Compile Include="Attributes\PropertyInfoAttribute.cs" />
+    <Compile Include="Attributes\Validators\ValidatorAttribute.cs" />
+    <Compile Include="Attributes\Validators\ValidatorDateGreaterToDay.cs" />
+    <Compile Include="Attributes\Validators\ValidatorDateTimeFormat.cs" />
+    <Compile Include="Attributes\Validators\ValidatorDenyValue.cs" />
+    <Compile Include="Attributes\Validators\ValidatorEmailAttribute.cs" />
+    <Compile Include="Attributes\Validators\ValidatorGreaterBaseAttribute.cs" />
+    <Compile Include="Attributes\Validators\ValidatorIsDateAttribute.cs" />
+    <Compile Include="Attributes\Validators\ValidatorLengthAttribute.cs" />
+    <Compile Include="Attributes\Validators\ValidatorNotAllowHTML.cs" />
+    <Compile Include="Attributes\Validators\ValidatorNotMultipleWhiteSpaceAttribute.cs" />
+    <Compile Include="Attributes\Validators\ValidatorNotSpace.cs" />
+    <Compile Include="Attributes\Validators\ValidatorNumeric.cs" />
+    <Compile Include="Attributes\Validators\ValidatorOnlyNumberAndCharacter.cs" />
+    <Compile Include="Attributes\Validators\ValidatorPhoneNumber.cs" />
+    <Compile Include="Attributes\Validators\ValidatorRegex.cs" />
+    <Compile Include="Attributes\Validators\ValidatorRequireAttribute.cs" />
+    <Compile Include="Attributes\Validators\ValidatorSpecialChar.cs" />
+    <Compile Include="Caching\CacheAttribute.cs" />
+    <Compile Include="Caching\CacheEntry.cs" />
+    <Compile Include="Caching\CacheFactoryAttribute.cs" />
+    <Compile Include="Caching\CacheManager.cs" />
+    <Compile Include="Caching\CacheMethodInfoBaseAttribute.cs" />
+    <Compile Include="Caching\CacheProvider\SqlCacheProvider.cs" />
+    <Compile Include="Caching\CacheProvider\WebCacheProvider.cs" />
+    <Compile Include="Caching\CacheType\SqlDependency\CacheDataBaseAttribute.cs" />
+    <Compile Include="Caching\CacheType\SqlDependency\CacheSqlInfoAttribute.cs" />
+    <Compile Include="Caching\CacheType\SqlDependency\CacheSqlInfoBase.cs" />
+    <Compile Include="Caching\CacheType\SqlDependency\CacheSqlMethodInfoAttribute.cs" />
+    <Compile Include="Caching\CacheType\WebCache\CacheWebMethodInfoAttribute.cs" />
+    <Compile Include="Caching\ICacheFactory.cs" />
+    <Compile Include="Caching\ICacheProvider.cs" />
+    <Compile Include="Caching\IClearCache.cs" />
+    <Compile Include="Caching\IServerCacheSwitchable.cs" />
+    <Compile Include="Caching\PropertyCacheAttribute.cs" />
+    <Compile Include="Caching\PropertyCacheOptionalAttribute.cs" />
+    <Compile Include="Caching\ServerCache.cs" />
+    <Compile Include="DataBase\ADOProvider\Attributes\DbServiceTypeAttribute.cs" />
+    <Compile Include="DataBase\ADOProvider\Attributes\FieldAttribute.cs" />
+    <Compile Include="DataBase\ADOProvider\Attributes\TableInfoAttribute.cs" />
+    <Compile Include="DataBase\ADOProvider\DataBaseService.cs" />
+    <Compile Include="DataBase\ADOProvider\DbTable.cs" />
+    <Compile Include="DataBase\ADOProvider\MainDBBase.cs" />
+    <Compile Include="DataBase\ADOProvider\MainDBBase.Designer.cs">
+      <DependentUpon>MainDBBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ADOProvider\ModelBase.cs" />
+    <Compile Include="DataBase\ADOProvider\ModelBase.Designer.cs">
+      <DependentUpon>ModelBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\ADOProvider\Param.cs" />
+    <Compile Include="DataBase\ADOProvider\ShSqlCommand\ShCommand.cs" />
+    <Compile Include="DataBase\ADOProvider\ShSqlCommand\ShDeleteCommand.cs" />
+    <Compile Include="DataBase\ADOProvider\ShSqlCommand\ShGetAllCommand.cs" />
+    <Compile Include="DataBase\ADOProvider\ShSqlCommand\ShGetByKeyCommand.cs" />
+    <Compile Include="DataBase\ADOProvider\ShSqlCommand\ShInsertCommand.cs" />
+    <Compile Include="DataBase\ADOProvider\ShSqlCommand\ShSaveCommand.cs" />
+    <Compile Include="DataBase\ADOProvider\ShSqlCommand\ShUpdateCommand.cs" />
+    <Compile Include="DataBase\ADOProvider\ShSqlCommand\TSqlBuilder.cs" />
+    <Compile Include="Extender\DictionaryCacheBase.cs" />
+    <Compile Include="Extender\MemberInfo.cs" />
+    <Compile Include="Extender\MemberInfoExtender.cs" />
+    <Compile Include="Extender\ObjextExtender.cs" />
+    <Compile Include="Extensions\ConcurrentDictionaryExtension.cs" />
+    <Compile Include="Extensions\DataTableExtension.cs" />
+    <Compile Include="Extensions\DateTimeExtension.cs" />
+    <Compile Include="Extensions\DictionaryExtension.cs" />
+    <Compile Include="Extensions\EnumerableExtension.cs" />
+    <Compile Include="Extensions\ExpressionExtension.cs" />
+    <Compile Include="Extensions\MemberInfoExtension.cs" />
+    <Compile Include="Extensions\NameValueCollectionExtension.cs" />
+    <Compile Include="Extensions\ObjectExtension.cs" />
+    <Compile Include="Extensions\StringExtension.cs" />
+    <Compile Include="Extensions\TypeExtension.cs" />
+    <Compile Include="Patterns\Chain.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflectors\ReflectAssemblyTypeListPropertyWithAttribute.cs" />
+    <Compile Include="Reflectors\ReflectAttribute.cs" />
+    <Compile Include="Reflectors\ReflectClassInfo.cs" />
+    <Compile Include="Reflectors\ReflectFieldInfo.cs" />
+    <Compile Include="Reflectors\ReflectListAttribute.cs" />
+    <Compile Include="Reflectors\ReflectMethodInfo.cs" />
+    <Compile Include="Reflectors\ReflectTypeListMethodInfo.cs" />
+    <Compile Include="Reflectors\ReflectTypeListProperty.cs" />
+    <Compile Include="Reflectors\ReflectTypeListPropertyPublic.cs" />
+    <Compile Include="Reflectors\ReflectTypeListPropertyWithAttribute.cs" />
+    <Compile Include="Reflectors\ReflectTypeListPropertyWithListAttribute.cs" />
+    <Compile Include="ShFlags\Flag.cs" />
+    <Compile Include="ShFlags\FlagsBase.cs" />
+    <Compile Include="Types\BooleanConverter.cs" />
+    <Compile Include="Types\ByteConverter.cs" />
+    <Compile Include="Types\ConverterOfAttribute.cs" />
+    <Compile Include="Types\DateTimeConverter.cs" />
+    <Compile Include="Types\DecimalConverter.cs" />
+    <Compile Include="Types\DoubleConverter.cs" />
+    <Compile Include="Types\GuidConverter.cs" />
+    <Compile Include="Types\Int16Converter.cs" />
+    <Compile Include="Types\Int32Converter.cs" />
+    <Compile Include="Types\Int64Converter.cs" />
+    <Compile Include="Types\ShTypeCode.cs" />
+    <Compile Include="Types\ShTypeCodeOfAttribute.cs" />
+    <Compile Include="Types\ShTypeConverter.cs" />
+    <Compile Include="Types\SingleConverter.cs" />
+    <Compile Include="Types\SqlTypeDescriptor.cs" />
+    <Compile Include="Types\StringConverter.cs" />
+    <Compile Include="Utility\CenterSecurity.cs" />
+    <Compile Include="Utility\Cryptography.cs" />
+    <Compile Include="Utility\DictionaryCacheBase.cs" />
+    <Compile Include="Utility\DiskDrive.cs" />
+    <Compile Include="Utility\EnumHelper.cs" />
+    <Compile Include="Utility\Function.cs" />
+    <Compile Include="Utility\MemberInfoHelper.cs" />
+    <Compile Include="Utility\Model.cs" />
+    <Compile Include="Utility\Pair.cs" />
+    <Compile Include="Utility\ShMailer.cs" />
+    <Compile Include="Utility\Singleton.cs" />
+    <Compile Include="Utility\TreeData.cs" />
+    <Compile Include="Utility\Xml\ConfigBase.cs" />
+    <Compile Include="Utility\Xml\ReadConfig.cs" />
+    <Compile Include="Web\Extensions\ControlExtension.cs" />
+    <Compile Include="Web\Extensions\DataListExtension.cs" />
+    <Compile Include="Web\Extensions\HttpRequestExtension.cs" />
+    <Compile Include="Web\Extensions\RepeaterExtension.cs" />
+    <Compile Include="Web\IInput.cs" />
+    <Compile Include="Web\Inputs\CheckBoxInput.cs" />
+    <Compile Include="Web\Inputs\DropDownListInput.cs" />
+    <Compile Include="Web\Inputs\MoneyInput.cs" />
+    <Compile Include="Web\Inputs\NumberInput.cs" />
+    <Compile Include="Web\Inputs\NumberInputInt.cs" />
+    <Compile Include="Web\Inputs\TextInput.cs" />
+    <Compile Include="Web\IOnLoad.cs" />
+    <Compile Include="Web\WebBase\AjaxBoundRequestAttribute.cs" />
+    <Compile Include="Web\WebBase\AjaxHandler.cs" />
+    <Compile Include="Web\WebBase\AjaxRequestConditionAttribute.cs" />
+    <Compile Include="Web\WebBase\ControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\WebBase\ResponseMessage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
