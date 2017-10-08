@@ -1,4 +1,8 @@
-﻿using System;
+﻿using ShCore.DataBase.ADOProvider.Attributes;
+using ShCore.Extensions;
+using ShCore.Utility;
+using ShCore.Web.Inputs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +11,7 @@ using System.Threading.Tasks;
 namespace Document.Entities
 {
     /// </summary>
-    [TableInfo(TableName = "[Admin.Districts]")]
+    [TableInfo(TableName = "[Districts]")]
     public class District : MainDbEntityBase
     {
         #region Properties

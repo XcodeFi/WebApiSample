@@ -1,4 +1,6 @@
-﻿using ShCore.DataBase.ADOProvider;
+﻿using Microsoft.Practices.EnterpriseLibrary.Data;
+using ShCore.DataBase.ADOProvider;
+using ShCore.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +14,7 @@ namespace Document
         /// <summary>
         /// Một Instance Database của EnterpriseLibrary
         /// </summary>
-        private static Database InstDb = DatabaseFactory.CreateDatabase("BAWebBusV2");
+        private static Database InstDb = DatabaseFactory.CreateDatabase("NotifyDb");
 
         /// <summary>
         /// 

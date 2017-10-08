@@ -4,15 +4,16 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Document.Entities;
 
 namespace WebApiSample.Controllers
 {
     public class ValuesController : ApiController
     {
         // GET api/values
-        public IEnumerable<string> Get()
+        public IEnumerable<Device> Get()
         {
-            return new string[] { "value1", "value2" };
+            return Device.GetAllData();
         }
 
         // GET api/values/5
