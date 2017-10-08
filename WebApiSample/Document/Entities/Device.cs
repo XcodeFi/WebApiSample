@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace Document.Entities
 {
@@ -24,6 +25,27 @@ namespace Document.Entities
         public static List<Device> GetAllData()
         {
             return Singleton<Device>.Inst.GetAll().ToList<Device>(false).ToList();
+        }
+        public override void Save()
+        {
+            if (ID>0)
+            {
+                base.Save();
+            }
+            else
+            {
+                base.Insert();
+            }
+        }
+
+        public Device GetByID(int id)
+        {
+            return GetAllData().Find(d=>d.ID==id);
+        }
+
+        public override int Delete()
+        {
+            return base.Delete();
         }
     }
 }

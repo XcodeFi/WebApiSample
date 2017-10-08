@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Document.Entities;
+using ShCore.Utility;
 
 namespace WebApiSample.Controllers
 {
@@ -17,9 +18,9 @@ namespace WebApiSample.Controllers
         }
 
         // GET api/values/5
-        public string Get(int id)
+        public Device Get(int id)
         {
-            return "value";
+            return Singleton<Device>.Inst.GetByID(id);
         }
 
         // POST api/values
@@ -33,8 +34,11 @@ namespace WebApiSample.Controllers
         }
 
         // DELETE api/values/5
-        public void Delete(int id)
+        public Device Delete(int id)
         {
+            var device = new Device { ID = id };
+            device.Delete();
+            return device;
         }
     }
 }
