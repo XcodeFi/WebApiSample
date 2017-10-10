@@ -24,8 +24,10 @@ namespace WebApiSample.Controllers
         }
 
         // POST api/values
-        public void Post([FromBody]string value)
+        public IHttpActionResult Post(Device device)
         {
+            device.Save();
+            return Ok();
         }
 
         // PUT api/values/5
@@ -34,11 +36,13 @@ namespace WebApiSample.Controllers
         }
 
         // DELETE api/values/5
-        public Device Delete(int id)
+        [HttpDelete]
+        public void Delete(int id)
         {
+
+            var obj = Singleton<Device>.Inst.GetByID(id);
             var device = new Device { ID = id };
             device.Delete();
-            return device;
         }
     }
 }

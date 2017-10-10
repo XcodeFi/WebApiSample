@@ -11,18 +11,6 @@ namespace ShCore.DataBase.ADOProvider
     /// </summary>
     public partial class ModelBase
     {
-        /// <summary>
-        /// Dùng chung cho các class để set css cho row
-        /// </summary>
-        /// <value>
-        /// The CSS class.
-        /// </value>
-        /// <Modified>
-        /// Name     Date         Comments
-        /// LuanBH  9/1/2016   created
-        /// </Modified>
-        public string CssClass { get; set; }
-
         #region IDataBaseService
         private IDataBaseService dataBaseService = null;
 
