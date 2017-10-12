@@ -39,7 +39,6 @@ namespace WebApiSample.Controllers
         [HttpDelete]
         public void Delete(int id)
         {
-
             var obj = Singleton<Device>.Inst.GetByID(id);
             var device = new Device { ID = id };
             device.Delete();
