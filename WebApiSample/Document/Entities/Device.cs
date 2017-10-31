@@ -1,13 +1,9 @@
 ﻿using ShCore.DataBase.ADOProvider.Attributes;
 using ShCore.Extensions;
 using ShCore.Utility;
-using ShCore.Web.Inputs;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+using System.ComponentModel.DataAnnotations;
 
 namespace Document.Entities
 {
@@ -20,6 +16,7 @@ namespace Document.Entities
         [Field]
         public string Token { get; set; }
         [Field]
+        [Required]
         public string PhoneNumber { get; set; }
 
         public static List<Device> GetAllData()
